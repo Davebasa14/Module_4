@@ -1,0 +1,246 @@
+/* ============================================================
+   SneakerPapi — Module 7: Dynamic Category & Product Registration
+   Full Stylesheet (style.css)
+   ============================================================ */
+
+/* Imports custom Barlow fonts from Google Fonts for branding */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap');
+
+/* GLOBAL COLOR PALETTE: Defines standard brand colors used across the entire layout */
+:root {
+    --sp-red: #E8202A;
+    --sp-red-dark: #B3141C;
+    --sp-black: #000000;
+    --sp-ink: #202020;
+    --sp-paper: #F4F3F1;
+    --sp-line: #D8D6D2;
+}
+
+/* BOX-SIZING FIX: Ensures borders and padding do not push elements outside their set widths */
+* {
+    box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND & MAIN CONTAINER: Sets up background graphics, default fonts, and padding */
+body {
+    margin: 0;
+    padding: 60px 20px;
+    min-height: 100vh;
+    font-family: 'Barlow', Arial, sans-serif;
+    color: var(--sp-ink);
+    background-color: var(--sp-paper);
+    background-image: url('SneakerPapi_Template.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative; /* Provides a positioning reference point for top logo */
+}
+
+/* UPPER RIGHT LOGO STYLING: Positions the logo fixed in the top right corner */
+.top-logo {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+    z-index: 100;
+}
+
+/* LAYOUT WIDTH CONTROL: Keeps all main content blocks aligned and centered within 900 pixels */
+h1, h2, form, #outputContainer, #treeView {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* HEADINGS STYLING: Gives major title headers distinct red and black banner styling */
+h1 {
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--sp-black);
+    margin: 0 0 30px;
+    padding: 14px 22px;
+    background: #FFFFFF;
+    border-left: 10px solid var(--sp-red);
+    box-shadow: 0 2px 0 var(--sp-black);
+}
+
+h2 {
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 30px auto 0;
+    padding: 10px 22px;
+    background: var(--sp-black);
+    clip-path: polygon(0 0, 100% 0, calc(100% - 22px) 100%, 0 100%);
+}
+
+h3 {
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 20px;
+    color: var(--sp-red-dark);
+    margin: 0 0 10px;
+}
+
+/* FORM & CONTENT PANELS: Styles inputs, logs, and containers as clean white cards */
+form,
+#outputContainer,
+#treeView {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid var(--sp-line);
+    border-top: 4px solid var(--sp-red);
+    padding: 24px 26px;
+    margin-top: 0;
+    margin-bottom: 26px;
+}
+
+form p {
+    margin: 0 0 16px;
+}
+
+label {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--sp-black);
+    margin-bottom: 6px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--sp-ink);
+    background: #FFFFFF;
+    border: 1px solid var(--sp-line);
+    border-radius: 0;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--sp-red);
+    box-shadow: inset 0 -2px 0 var(--sp-red);
+}
+
+input::placeholder {
+    color: #A9A6A2;
+}
+
+/* SUBMIT BUTTON STYLING: Creates an angled red brand button with hover effects */
+button {
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    background: var(--sp-red);
+    border: none;
+    padding: 12px 34px;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+}
+
+button:hover {
+    background: var(--sp-black);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--sp-black);
+    outline-offset: 3px;
+}
+
+/* EXECUTION LOG LIST STYLING: Formats confirmation details with clean accent borders */
+#outputContainer ul {
+    margin: 0 0 24px;
+    padding-left: 20px;
+}
+
+#outputContainer li {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    padding-left: 6px;
+    border-left: 3px solid var(--sp-red);
+}
+
+#outputContainer p strong {
+    color: var(--sp-red-dark);
+}
+
+/* PRODUCT REGISTRATION CONFIRMATION TABLE STYLING */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    font-size: 17px;
+    text-align: left;
+    color: #FFFFFF;
+    background: var(--sp-black);
+    padding: 9px 12px;
+}
+
+td {
+    padding: 9px 12px;
+    border: 1px solid var(--sp-line);
+}
+
+tr:nth-child(even) td {
+    background: #FAFAF9;
+}
+
+td:first-child {
+    font-weight: 600;
+    width: 38%;
+    color: var(--sp-black);
+}
+
+/* CATEGORY TREE VIEW STYLING: Dark terminal-style box for viewing nested folders */
+#treeView {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #FFFFFF;
+    background: var(--sp-black);
+    border: none;
+    border-top: 4px solid var(--sp-red);
+    overflow-x: auto;
+    white-space: pre;
+    min-height: 90px;
+}
+
+/* MOBILE RESPONSIVE STYLING: Adjusts margins and font sizes for smaller phone screens */
+@media (max-width: 640px) {
+    body {
+        padding: 24px 12px;
+        background-attachment: scroll;
+    }
+
+    .top-logo {
+        max-height: 75px;
+        top: 10px;
+        right: 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    form,
+    #outputContainer,
+    #treeView {
+        padding: 18px 16px;
+    }
+}

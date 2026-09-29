@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamic Category & Product Registration</title>
+    <!-- Connects the webpage to the styling stylesheet for visual appearance -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- UPPER RIGHT LOGO: Displays the brand image at the top corner of the screen -->
+    <img src="Logo.png" alt="SneakerPapi Logo" class="top-logo">
+
+    <!-- MAIN TITLE: Tells the user what this page does -->
+    <h1>Dynamic Category & Product Registration</h1>
+
+    <!-- SECTION 1: PRODUCT ENTRY FORM -->
+    <!-- This form collects all information needed to register a new product into a specific category path -->
+    <h2>Product Entry Form</h2>
+    <form id="productForm">
+        <p>
+            <label for="categoryPath">Category Path (e.g., Footwear > Crocs & Sandals):</label><br>
+            <input type="text" id="categoryPath" required placeholder="Footwear > Crocs & Sandals">
+        </p>
+        <p>
+            <label for="productCode">Product Code (SKU):</label><br>
+            <input type="text" id="productCode" required placeholder="CROCS-CLOG-01">
+        </p>
+        <p>
+            <label for="productName">Product Name:</label><br>
+            <input type="text" id="productName" required placeholder="Classic Clog White">
+        </p>
+        <p>
+            <label for="productSize">Size:</label><br>
+            <input type="text" id="productSize" required placeholder="40/Large">
+        </p>
+        <p>
+            <label for="productColor">Color:</label><br>
+            <input type="text" id="productColor" required placeholder="White">
+        </p>
+        <p>
+            <label for="basePrice">Base Price (₱):</label><br>
+            <input type="number" id="basePrice" required placeholder="2500">
+        </p>
+        <p>
+            <label for="authenticity">Authenticity Flag:</label><br>
+            <select id="authenticity">
+                <option value="Authentic">Authentic / Original</option>
+                <option value="Class A">Class A</option>
+            </select>
+        </p>
+        <!-- Submit button triggers the product registration process -->
+        <button type="submit">Register Product</button>
+    </form>
+
+    <!-- SECTION 2: OUTPUT LOG -->
+    <!-- Displays a confirmation card and status message after a product is submitted -->
+    <h2>Registration Output & Confirmation</h2>
+    <div id="outputContainer"></div>
+
+    <!-- SECTION 3: CATEGORY TREE DISPLAY -->
+    <!-- Displays an organized visual hierarchy showing all category folders and nested products -->
+    <h2>Category Tree & Product Directory</h2>
+    <pre id="treeView"></pre>
+
+    <script src="samples.js"></script>
+
+</body>
+</html>
